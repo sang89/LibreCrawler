@@ -12,6 +12,7 @@ from fake_useragent import UserAgent
 from selenium.webdriver.support.ui import Select
 
 from utils import *
+from constants import *
 
 # config options for selenium driver. These include:
 # a fake user agent
@@ -191,7 +192,7 @@ def crawl_svg_calendar():
 
     date_shown = driver.find_elements_by_id('dateTag')
     try:
-        date_obj = convert_to_datetime_obj('07/29/2020')
+        date_obj = convert_to_datetime_obj(DATE_TO_CRAWL)
         month_year = date_obj.strftime('%B %Y')
         day = date_obj.strftime('%d')
         if (day[0] == '0'):
